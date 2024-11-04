@@ -202,7 +202,62 @@ Module 7: Creating Angular Services
 Module 8: Making HTTP Requests with angular
   - https://app.pluralsight.com/ilx/video-courses/d5d30ea4-0af1-447a-b13a-e60a095337a6/779c97bc-43ab-42d0-8226-72c993410f5c/67eb7c76-acdf-4a13-bfa0-31a8b71f21dd
 
-  
+  - Brice Wilson Course:
+      https://app.pluralsight.com/ilx/video-courses/clips/9e167f94-ef61-476c-9857-490f10f679c1 - Applicable to Angular V12 and on
+
+  - Angular HTTP Playbook by Zacahry Bennet (do this later)
+       - https://app.pluralsight.com/ilx/video-courses/clips/c2ff2b64-1294-44ee-900c-856eea624967
+
+  - OBSERVABLES - deals with async data
+      -https://app.pluralsight.com/ilx/video-courses/d5d30ea4-0af1-447a-b13a-e60a095337a6/779c97bc-43ab-42d0-8226-72c993410f5c/9487b53c-865b-40bc-9130-d158f65f68e4
+
+      - promises -A promise in Javascript is an object which represent the eventual completion or
+      failure of an asynchronous operation. Promises represent a proxy for a value which are
+      getting in some point in the future.
+
+      A promise can have 3 states which are the following:
+        1. Pending: This is the initial state of the promise, the promise is now waiting for either
+        to be resolved or rejected. For example, when are reaching out to the web with an AJAX
+        request and wrapping the request in a promise. Then the promise will be pending in
+        the time window in which the request is not returned.
+
+        2. Fulfilled: When the operation is completed succesfully, the promise is fulfilled.
+        For example, when we are reaching out to be web using AJAX for some JSON data and wrapping
+        it in a promise. When we are succesfully getting data back the promise is said to be fulfilled.
+
+        3.Rejected: When the operation has failed, the promise is rejected. For example, when we
+        are reaching out to be web using AJAX for some JSON data and wrapping it in a promise.
+        When we are getting a 404 error the promise has been rejected. They represent the
+        eventual result of an asynchronous operation, which can be either a value or an error.
+
+        Promise States:
+         Example Javascript promise:
+            promise
+            .then(result => {
+              // Handle the result when the promise is fulfilled
+            })
+            .catch(error => {
+              // Handle the error when the promise is rejected
+            });
+
+      - callbacks - is a function that receives notifiction from the web server that had
+        data in it. Angular doesn't use it because it has a lot of issues in it
+
+      - see notes in source about observables
+
+      - add http stuff cagtalogcomponent.ts
+
+      - create api-server folder for the express node server
+           - cd api-server
+           - npm i
+           - start the node server: npm start
+           - https://localhost:8081/api/products
+
+      - once server is setup go to CatalogComponent
+          - create file proxy.conf in ./src
+          - then go to Angular.json file and add the following to dev server:
+                "proxyConfig": "src/proxy.conf.json"
+                
 Module 9: Routing and Navigating with Angular
 
 Module10: Creating Angular Forms
