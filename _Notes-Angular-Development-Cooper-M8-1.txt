@@ -258,7 +258,32 @@ Module 8: Making HTTP Requests with angular
           - then go to Angular.json file and add the following to dev server:
                 "proxyConfig": "src/proxy.conf.json"
          - get the server running with npm start
-         
+
+      - then create another service in src/app/catalog
+         ng generate service src/app/catalog/product
+
+      - then import  in AppModule.ts
+           imports: [
+           ...
+           HttpClientModule
+       ],
+      - inject ProductService in the CatalogComponent
+
+      - create ngOnInit() lifecycle hook and call
+        the ProductService to load data.
+
+      - lastly do npm start in the api-server folder
+      - then npm start from ./src to start the website
+      - you should see that the products are displayed as usual. but
+        this time it is fetch from the server using http call
+
+        Note: To verify the Http Call
+        - F12
+        - click Network Tab --> somewhere in the "filter line" there's an menu
+          item called "Fetch/XHR" ---> Preview
+        - (Better see the file below for details )
+          c:\_AMyDevops-Git-Chrome-and-Other-Stuff\_Notes-Verifying-Http-Calls-Using-Chrome-DevTools.txt
+          
 Module 9: Routing and Navigating with Angular
 
 Module10: Creating Angular Forms
